@@ -1,29 +1,29 @@
-class Solution {
-    public boolean isSubsequence(String s, String t) {
-        if (s.equals("") && t.equals("")) {
-            return true;
-        } else if (t.equals("")) {
-            return false;
-        }
+package two_pointers;
 
-        if (s.length() > t.length()) {
-            return false;
-        }
-
-        int sIndex = 0;
-        int tIndex = 0;
-
-        while (sIndex < s.length() && tIndex < t.length()) {
-            if (s.charAt(sIndex) == t.charAt(tIndex)) {
-                sIndex++;
+class IsSubsequence {
+    class Solution {
+        public boolean isSubsequence(String s, String t) {
+            if (s.isEmpty() && t.isEmpty()) {
+                return true;
+            } else if (t.isEmpty()) {
+                return false;
             }
-            tIndex++;
-        }
 
-        if (sIndex == s.length()) {
-            return true;
-        }
+            if (s.length() > t.length()) {
+                return false;
+            }
 
-        return false;
+            int sIndex = 0;
+            int tIndex = 0;
+
+            while (sIndex < s.length() && tIndex < t.length()) {
+                if (s.charAt(sIndex) == t.charAt(tIndex)) {
+                    sIndex++;
+                }
+                tIndex++;
+            }
+
+            return sIndex == s.length();
+        }
     }
 }
