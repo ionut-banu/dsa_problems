@@ -1,5 +1,8 @@
 package sliding_window;
 
+import java.util.HashSet;
+import java.util.Set;
+
 class LongestSubstringWithoutRepeatingCharacters {
     class Solution {
         public int lengthOfLongestSubstring(String s) {
